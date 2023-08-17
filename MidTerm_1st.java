@@ -1,18 +1,22 @@
 public class MidTerm_1st {
     public static void main(String[] args) {
+
+        //Create Objects
         Product p1 = new Product("chair", 500.0);
-        p1.showDetails();
-
         Electronics e1 = new Electronics("Television", 20000.0, "Samsung", "Neo QLED");
-        e1.showDetails();
-
         Smartphone s1 = new Smartphone("Iphone", 40000.0, "Apple", "Iphone 99", "ios");
-        s1.showDetails();
-
         Book b1 = new Book("OOP Programming", 250.0, "John Doe", 300);
+        
+
+        //Show Details
+        p1.showDetails();
+        e1.showDetails();
+        s1.showDetails();
         b1.showDetails();
     }
 }
+
+
 
 class Product {
     private String name;
@@ -21,6 +25,12 @@ class Product {
     public Product(String name, Double price) {
         this.name = name;
         this.price = price;
+    }
+
+    public void showDetails() {
+        System.out.println("******************************");
+        System.out.println("Product Name : " + this.name);
+        System.out.println("Product Price : " + this.price);
     }
 
     public void setName(String name) {
@@ -39,13 +49,11 @@ class Product {
         return price;
     }
 
-    public void showDetails() {
-        System.out.println("******************************");
-        System.out.println("Product Name : " + this.name);
-        System.out.println("Product Price : " + this.price);
-    }
 }
 
+
+
+// Electronics --> Product ***START***
 class Electronics extends Product {
     private String brand;
     private String model;
@@ -54,6 +62,12 @@ class Electronics extends Product {
         super(name, price);
         this.brand = brand;
         this.model = model;
+    }
+
+    public void showDetails() {
+        super.showDetails();
+        System.out.println("Brand : " + this.brand);
+        System.out.println("Model : " + this.model);
     }
 
     public void setBrand(String brand) {
@@ -72,13 +86,12 @@ class Electronics extends Product {
         return model;
     }
 
-    public void showDetails() {
-        super.showDetails();
-        System.out.println("Brand : " + this.brand);
-        System.out.println("Model : " + this.model);
-    }
 }
+// Electronics --> Product ***END***
 
+
+
+// Book --> Product ***START***
 class Book extends Product {
     private String author;
     private Integer pages;
@@ -87,6 +100,12 @@ class Book extends Product {
         super(name, price);
         this.author = author;
         this.pages = pages;
+    }
+    
+    public void showDetails() {
+        super.showDetails();
+        System.out.println("Author : " + this.author);
+        System.out.println("Number of Pages : " + this.pages);
     }
 
     public void setAuthor(String author) {
@@ -104,20 +123,23 @@ class Book extends Product {
     public Integer getPages() {
         return pages;
     }
-
-    public void showDetails() {
-        super.showDetails();
-        System.out.println("Author : " + this.author);
-        System.out.println("Number of Pages : " + this.pages);
-    }
 }
+// Book --> Product ***END***
 
+
+
+// Smartphone --> Electronics --> Product ***START***
 class Smartphone extends Electronics {
     private String OperatingSystem;
 
     public Smartphone(String name, Double price, String brand, String model, String OperatingSystem) {
         super(name, price, brand, model);
         this.OperatingSystem = OperatingSystem;
+    }
+
+    public void showDetails() {
+        super.showDetails();
+        System.out.println("Operating System : " + this.OperatingSystem);
     }
 
     public void setOperatingSystem(String operatingSystem) {
@@ -127,9 +149,5 @@ class Smartphone extends Electronics {
     public String getOperatingSystem() {
         return OperatingSystem;
     }
-
-    public void showDetails() {
-        super.showDetails();
-        System.out.println("Operating System : " + this.OperatingSystem);
-    }
 }
+// Smartphone --> Electronics --> Product ***END***
