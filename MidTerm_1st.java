@@ -20,9 +20,9 @@ public class MidTerm_1st {
 
 class Product {
     private String name;
-    private Double price;
+    private double price;
 
-    public Product(String name, Double price) {
+    public Product(String name, double price) {
         this.name = name;
         this.price = price;
     }
@@ -41,11 +41,11 @@ class Product {
         this.name = name;
     }
 
-    public Double getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -59,7 +59,7 @@ class Electronics extends Product {
     private String brand;
     private String model;
 
-    public Electronics(String name, Double price, String brand, String model){
+    public Electronics(String name, double price, String brand, String model){
         super(name, price);
         this.brand = brand;
         this.model = model;
@@ -96,9 +96,9 @@ class Electronics extends Product {
 // Book --> Product ***START***
 class Book extends Product {
     private String author;
-    private Integer pages;
+    private int pages;
 
-    public Book(String name, Double price, String author, Integer pages) {
+    public Book(String name, double price, String author, int pages) {
         super(name, price);
         this.author = author;
         this.pages = pages;
@@ -118,11 +118,11 @@ class Book extends Product {
         this.author = author;
     }
     
-    public Integer getPages() {
+    public int getPages() {
         return pages;
     }
 
-    public void setPages(Integer pages) {
+    public void setPages(int pages) {
         this.pages = pages;
     }
 
@@ -135,7 +135,7 @@ class Book extends Product {
 class Smartphone extends Electronics {
     private String OperatingSystem;
 
-    public Smartphone(String name, Double price, String brand, String model, String OperatingSystem) {
+    public Smartphone(String name, double price, String brand, String model, String OperatingSystem) {
         super(name, price, brand, model);
         this.OperatingSystem = OperatingSystem;
     }
@@ -148,9 +148,9 @@ class Smartphone extends Electronics {
     public String getOperatingSystem() {
         return OperatingSystem;
     }
-    
-    public void setOperatingSystem(String operatingSystem) {
-        OperatingSystem = operatingSystem;
+
+    public void setOperatingSystem(String OperatingSystem) {
+        this.OperatingSystem = OperatingSystem;
     }
 
 }
