@@ -33,21 +33,22 @@ class Product {
         System.out.println("Product Price : " + this.price);
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getName() {
-        return name;
+    public Double getPrice() {
+        return price;
     }
 
     public void setPrice(Double price) {
         this.price = price;
     }
 
-    public Double getPrice() {
-        return price;
-    }
 
 }
 
@@ -70,21 +71,22 @@ class Electronics extends Product {
         System.out.println("Model : " + this.model);
     }
 
+    public String getBrand() {
+        return brand;
+    }
+
     public void setBrand(String brand) {
         this.brand = brand;
     }
     
-    public String getBrand() {
-        return brand;
+    public String getModel() {
+        return model;
     }
 
     public void setModel(String model) {
         this.model = model;
     }
 
-    public String getModel() {
-        return model;
-    }
 
 }
 // Electronics --> Product ***END***
@@ -108,21 +110,22 @@ class Book extends Product {
         System.out.println("Number of Pages : " + this.pages);
     }
 
+    public String getAuthor() {
+        return author;
+    }
+
     public void setAuthor(String author) {
         this.author = author;
     }
     
-    public String getAuthor() {
-        return author;
+    public Integer getPages() {
+        return pages;
     }
 
     public void setPages(Integer pages) {
         this.pages = pages;
     }
 
-    public Integer getPages() {
-        return pages;
-    }
 }
 // Book --> Product ***END***
 
@@ -142,12 +145,13 @@ class Smartphone extends Electronics {
         System.out.println("Operating System : " + this.OperatingSystem);
     }
 
+    public String getOperatingSystem() {
+        return OperatingSystem;
+    }
+    
     public void setOperatingSystem(String operatingSystem) {
         OperatingSystem = operatingSystem;
     }
 
-    public String getOperatingSystem() {
-        return OperatingSystem;
-    }
 }
 // Smartphone --> Electronics --> Product ***END***
